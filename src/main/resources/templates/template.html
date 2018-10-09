@@ -1,0 +1,80 @@
+<div class="sidebar" data-background-color="black" data-active-color="primary" th:fragment="menu">
+
+    <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
+
+	<div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="" class="simple-text">
+                Azuria
+            </a>
+        </div>
+
+        <ul class="nav">   
+            <li th:class="${menu} == 'Dashboard' ? 'active' : ''">
+                <a href="/dashboard">
+                    <i class="ti-panel"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li th:class="${menu} == 'Devices' ? 'active' : ''">
+                <a href="/devices">
+                    <i class="ti-blackboard"></i>
+                    <p>Devices</p>
+                </a>
+            </li>
+            <li th:class="${menu} == 'Discover' ? 'active' : ''">
+                <a href="/discover">
+                    <i class="ti-rss-alt"></i>
+                    <p>Discover</p>
+                </a>
+            </li>
+        </ul>
+	</div>
+</div>
+
+<div class="container-fluid" th:fragment="titlebar">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" th:text="${menu}">{PAGE TITLE}</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="ti-panel"></i>
+                                <p>Stats</p>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="ti-bell"></i>
+                                    <p class="notification">5</p>
+                                    <p>Notifications</p>
+                                    <b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Notification 1</a></li>
+                                <li><a href="#">Notification 2</a></li>
+                                <li><a href="#">Notification 3</a></li>
+                                <li><a href="#">Notification 4</a></li>
+                                <li><a href="#">Another notification</a></li>
+                              </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="ti-settings"></i>
+                                <p>Settings</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
